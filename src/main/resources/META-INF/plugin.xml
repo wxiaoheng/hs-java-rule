@@ -1,0 +1,37 @@
+<idea-plugin>
+    <id>com.hundsun.hep.studio.hs_java_rule</id>
+    <name>恒生规约代码扫描</name>
+    <vendor email="wangxh@hundsun.com" url="http://www.hundsun.com">HUNDSUN</vendor>
+
+    <idea-version since-build="193.0"/>
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <inspectionToolProvider implementation="com.hundsun.hep.studio.HsInspectionToolProvider"/>
+    </extensions>
+    <actions>
+        <!-- Add your actions here -->
+        <action id="hs_rule_check" class="com.hundsun.hep.studio.HsRuleCheckAction" text="恒生规约检查">
+        </action>
+
+        <group popup="true" id="com.hundsun.hep.studio.action_group" text="HEP">
+            <reference ref="hs_rule_check"/>
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+        </group>
+    </actions>
+
+    <depends>com.intellij.modules.java</depends>
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.lang</depends>
+    <depends>com.intellij.modules.vcs</depends>
+    <depends>com.intellij.modules.xml</depends>
+    <depends>com.intellij.modules.xdebugger</depends>
+</idea-plugin>
