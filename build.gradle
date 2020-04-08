@@ -28,7 +28,7 @@ apply plugin: 'java'
 
 
 intellij {
-    version '193.6911.18'
+    version '193.6015.39'
     plugins = ['java']
 }
 

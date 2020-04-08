@@ -39,7 +39,7 @@ public class HsAccessStaticViaInstanceInspection extends AccessStaticViaInstance
     @NotNull
     @Override
     public String getDisplayName() {
-        return "静态方法或静态属性直接使用类名来访问1";
+        return "静态方法或静态属性直接使用类名来访问";
     }
 
     @Nullable

@@ -8,6 +8,7 @@ import com.intellij.psi.PsiFile;
 import net.sourceforge.pmd.Rule;
 import net.sourceforge.pmd.RulePriority;
 import net.sourceforge.pmd.RuleViolation;
+import org.apache.commons.lang3.StringUtils;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
@@ -62,7 +63,11 @@ public class DelegatePmdInspection extends LocalInspectionTool implements HsBase
 
     @Override
     public String getStaticDescription(){
-        return getRule().getDescription();
+        String desc = getRule().getDescription();
+        if (StringUtils.isNotBlank(desc)){
+            return desc;
+        }
+        return getDisplayName();
     }
 
     @Override
